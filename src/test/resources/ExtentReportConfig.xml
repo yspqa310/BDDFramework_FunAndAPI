@@ -5,7 +5,7 @@
 <!--        <theme>dark</theme>-->
         <encoding>UTF-8</encoding>
         <protocol>https</protocol>
-        <documentTitle>BDDFramework_Chandu_Pasha</documentTitle>
+        <documentTitle>BDDFramework_Pasha</documentTitle>
         <reportName>Sample</reportName>
         <dateFormat>yyyy-MM-dd</dateFormat>
         <timeFormat>HH:mm:ss</timeFormat>

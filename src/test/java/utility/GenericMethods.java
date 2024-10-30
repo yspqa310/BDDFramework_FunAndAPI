@@ -28,6 +28,9 @@ public class GenericMethods extends DriverFactory {
 
     public static Logger LOGGER = Logger.getLogger(GenericMethods.class);
 //    public static final Logger LOGGER = LogManager.getLogger(GenericMethods.class);
+    public static WebDriver globalDriver(){
+        return getDriver();
+    }
 
     /**
      * This Method Will Return the screenShot
@@ -84,10 +87,12 @@ public class GenericMethods extends DriverFactory {
         for (String handle : getDriver().getWindowHandles()) {
             getDriver().switchTo().window(handle);
             if (getDriver().getTitle().equals(targetTitle)) {
-                return;
+                break;
+            } else {
+                getDriver().switchTo().window(origin);
             }
         }
-        getDriver().switchTo().window(origin);
+
     }
 
 
@@ -829,9 +834,9 @@ public class GenericMethods extends DriverFactory {
 //        }
 //    }
     public static HashMap<String, String> UrlMap = new HashMap<>();
-    public  HashMap<String, String> getUrl() {
-        PropertyFilesLoader pf = new PropertyFilesLoader();
 
+    public String getUrl() {
+        PropertyFilesLoader pf = new PropertyFilesLoader();
         if (pf.getProperty("Environment").equalsIgnoreCase("sit")) {
             UrlMap.put("url", "https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F");
         } else if (pf.getProperty("Environment").equalsIgnoreCase("AUT")) {
@@ -839,7 +844,6 @@ public class GenericMethods extends DriverFactory {
         } else if (pf.getProperty("Environment").equalsIgnoreCase("UAT")) {
             UrlMap.put("url", "https://www.amazon.com");
         }
-        return UrlMap;
+        return UrlMap.get("url");
     }
-
 }

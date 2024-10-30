@@ -10,7 +10,7 @@ public class HomePage extends GenericMethods {
 
 
     public HomePage() {
-        PageFactory.initElements(DriverFactory.getDriver(), this);
+        PageFactory.initElements(globalDriver(), this);
     }
 
 

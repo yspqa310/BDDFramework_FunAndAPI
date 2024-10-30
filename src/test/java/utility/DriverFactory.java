@@ -26,7 +26,7 @@ public class DriverFactory extends PropertyFilesLoader {
      * @throws IOException
      */
     public static WebDriver initiatingBrowser() throws IOException {
-
+        GenericMethods gm = new GenericMethods();
         try {
             String browser = GetProperty("browser");
             if (browser.equalsIgnoreCase("chrome")) {
@@ -39,24 +39,24 @@ public class DriverFactory extends PropertyFilesLoader {
                 options.addArguments("disable-infobars");
                 options.addArguments("--disable-gpu");
                 driver = new ChromeDriver(options);
-                LOGGER.info("Chrome browser Launched successfully");
+                gm.writeLoginfo("Chrome browser Launched successfully");
             } else if (browser.equalsIgnoreCase("firfox")) {
                 driver = new FirefoxDriver();
-                LOGGER.info("Firefox browser Launched successfully");
+                gm.writeLoginfo("Firefox browser Launched successfully");
             } else if (browser.equalsIgnoreCase("edge")) {
                 driver = new EdgeDriver();
-                LOGGER.info("Edge browser Launched successfully");
+                gm.writeLoginfo("Edge browser Launched successfully");
             } else {
                 System.out.println("please enter right browser name");
             }
             driver.manage().window().maximize();
-            LOGGER.info("browser maximized successfully");
+            gm.writeLoginfo("browser maximized successfully");
             driver.manage().deleteAllCookies();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-            LOGGER.info("implicitlyWait 30 sec added");
+            gm.writeLoginfo("implicitlyWait 30 sec added");
         } catch (IOException e) {
             System.err.println("Don't have compatibility");
-            LOGGER.error("browser not able to launch Launched");
+            gm.writeLoginfo("browser not able to launch Launched");
         }
 
         return driver;

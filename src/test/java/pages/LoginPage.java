@@ -9,7 +9,7 @@ import utility.GenericMethods;
 public class LoginPage extends GenericMethods {
 
     public LoginPage() {
-        PageFactory.initElements(DriverFactory.getDriver(), this);
+        PageFactory.initElements(globalDriver(), this);
     }
 
     @FindBy(id = "Email") WebElement email;

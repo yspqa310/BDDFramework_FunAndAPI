@@ -28,7 +28,7 @@ public class Hooks extends DriverFactory {
     public void launchUrL() throws IOException {
         GenericMethods gm = new GenericMethods();
         initiatingBrowser();
-        getDriver().get(gm.getUrl().get("url"));
+        getDriver().get(gm.getUrl());
         System.out.println("i am inside Before method");
     }
 
@@ -40,8 +40,8 @@ public class Hooks extends DriverFactory {
     public void launchURL() throws IOException {
         GenericMethods gm = new GenericMethods();
         initiatingBrowser();
-        getDriver().get(gm.getUrl().get("url"));
-        System.out.println("i am inside Before method");
+        getDriver().get(gm.getUrl());
+        System.out.println("i am inside BeforeTest method");
     }
 
     /**
@@ -57,10 +57,10 @@ public class Hooks extends DriverFactory {
                 scenario.attach(screenshot, "image/png", scenario.getName());
                 gm.writeLoginfo("Successfully Captured screenShot for Failed scenario" + scenario.getName());
             }
-        } catch (Exception chandu_pasha) {
+        } catch (Exception pasha) {
 
-            gm.writeLoginfo("Facing issue Capturing ScreenShot : " + chandu_pasha);
-            System.err.println("Facing issue while capturing ScreenShot : " + chandu_pasha);
+            gm.writeLoginfo("Facing issue Capturing ScreenShot : " + pasha);
+            System.err.println("Facing issue while capturing ScreenShot : " + pasha);
         }
         getDriver().quit();
     }
