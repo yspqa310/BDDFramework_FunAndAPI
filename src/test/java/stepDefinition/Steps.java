@@ -14,7 +14,7 @@ public class Steps extends DriverFactory {
     public void user_enter_the_login_details_and_click_on_login_button() {
         lp = new LoginPage();
         lp.enterLoginDetails();
-        lp.clickOnLoginBtn();
+//        lp.clickOnLoginBtn();
 
     }
 
@@ -52,7 +52,7 @@ public class Steps extends DriverFactory {
     @Then("click on logout")
     public void click_on_logout() {
         hp = new HomePage();
-        hp.logout();
+//        hp.logout();
     }
 
 

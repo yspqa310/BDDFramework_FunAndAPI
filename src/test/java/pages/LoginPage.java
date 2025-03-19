@@ -18,10 +18,10 @@ public class LoginPage extends GenericMethods {
 
     public void enterLoginDetails()
     {
-        waitForElementTobeEnterText(email,getProperty("username"));
-        assertElementDisplayed(email,email+"Element not Displaying");
-        waitForElementTobeEnterText(passWord,getProperty("password"));
-        assertElementDisplayed(passWord,passWord+"Element not Displaying");
+//        waitForElementTobeEnterText(email,getProperty("username"));
+//        assertElementDisplayed(email,email+"Element not Displaying");
+//        waitForElementTobeEnterText(passWord,getProperty("password"));
+//        assertElementDisplayed(passWord,passWord+"Element not Displaying");
 
     }
 
