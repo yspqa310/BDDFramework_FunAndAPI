@@ -16,6 +16,7 @@ public class Hooks extends DriverFactory {
      *
      * @throws IOException
      */
+
     @Before
     public void launchUrL() throws IOException {
         GenericMethods gm = new GenericMethods();

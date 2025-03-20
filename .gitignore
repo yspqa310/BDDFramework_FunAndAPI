@@ -38,3 +38,5 @@ build/
 
 ### Mac OS ###
 .DS_Store
+# Default ignored files
+/.idea/shelf/
