@@ -1,10 +1,6 @@
 package utility;
 
-import io.cucumber.core.gherkin.Scenario;
 import org.apache.commons.io.FileUtils;
-
-import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -17,18 +13,14 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeoutException;
 
 public class GenericMethods extends DriverFactory {
-
-
     public static Logger LOGGER = Logger.getLogger(GenericMethods.class);
-//    public static final Logger LOGGER = LogManager.getLogger(GenericMethods.class);
-    public static WebDriver globalDriver(){
+
+    public static WebDriver globalDriver() {
         return getDriver();
     }
 
@@ -473,9 +465,6 @@ public class GenericMethods extends DriverFactory {
      *
      * @return String
      */
-    public static String randomEmailGenerator() {
-        return RandomStringUtils.randomAlphanumeric(8) + "@gmail.com";
-    }
 
     public static void deleteDir(File dir) {
         if (dir.isDirectory()) {

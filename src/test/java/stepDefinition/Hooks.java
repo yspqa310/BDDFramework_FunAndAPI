@@ -1,18 +1,10 @@
 package stepDefinition;
-
-import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 import io.cucumber.java.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import utility.DriverFactory;
 import utility.GenericMethods;
-
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class Hooks extends DriverFactory {
 

@@ -1,7 +1,4 @@
 package utility;
-
-
-import io.cucumber.core.logging.LoggerFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -15,9 +12,9 @@ import java.time.Duration;
 
 public class DriverFactory extends PropertyFilesLoader {
 
-    public static WebDriver driver;
     public final static Logger LOGGER = LogManager.getLogger(DriverFactory.class);
     //Logger log = LoggerHelper.getLogger(ServiceHooks.class);
+    public static WebDriver driver;
 
     /**
      * This method will initiatingBrowser Based on your requirement,
@@ -31,7 +28,6 @@ public class DriverFactory extends PropertyFilesLoader {
             String browser = GetProperty("browser");
             if (browser.equalsIgnoreCase("chrome")) {
                 ChromeOptions options = new ChromeOptions();
-//                options.addArguments("--headless");
                 options.addArguments("--start-maximized");
                 options.addArguments("--disable-extensions");
                 options.addArguments("--disable-popup-blocking");

@@ -1,18 +1,8 @@
 package testNg;
-
-import io.cucumber.java.Scenario;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
 import stepDefinition.Hooks;
-import utility.DriverFactory;
-import utility.GenericMethods;
-
-import java.io.IOException;
 
 public class Login extends Hooks {
     LoginPage lp;

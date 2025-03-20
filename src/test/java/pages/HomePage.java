@@ -1,10 +1,8 @@
 package pages;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
-import utility.DriverFactory;
 import utility.GenericMethods;
 
 public class HomePage extends GenericMethods {
@@ -73,7 +71,7 @@ public class HomePage extends GenericMethods {
 
     @Test
     public void addNewCustomerInformation() throws InterruptedException {
-        waitForElementTobeEnterText(email, randomEmailGenerator());
+        waitForElementTobeEnterText(email, "testament");
         waitForElementTobeEnterText(password, "Admin");
         waitForElementTobeEnterText(firstName, "chandu");
         waitForElementTobeEnterText(lastName, "chirra");

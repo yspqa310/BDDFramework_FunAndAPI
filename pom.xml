@@ -69,11 +69,7 @@
         </dependency>
 
         <!-- Web Driver Manager -->
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>${webdrivermanager.version}</version>
-        </dependency>
+      
 
 
         <!-- Apache Common -->
