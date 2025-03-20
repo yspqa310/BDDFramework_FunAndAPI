@@ -2,7 +2,6 @@ Feature:  Verify customer
 
   @tag2
   Scenario: Verify Customer able to adding or not
-#    Given user launch the application
     When user enter the login details and click on login button
     And user click on customers menu
     And user click  on customer option

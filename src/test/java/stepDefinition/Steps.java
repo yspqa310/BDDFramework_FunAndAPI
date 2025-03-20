@@ -4,17 +4,21 @@ import io.cucumber.java.en.*;
 import pages.HomePage;
 import pages.LoginPage;
 import utility.DriverFactory;
+import utility.GenericMethods;
 
 
 public class Steps extends DriverFactory {
     LoginPage lp;
     HomePage hp;
+    GenericMethods gm = new GenericMethods();
 
     @When("user enter the login details and click on login button")
     public void user_enter_the_login_details_and_click_on_login_button() {
         lp = new LoginPage();
         lp.enterLoginDetails();
+        gm.writeLoginfo("User entered email and password");
         lp.clickOnLoginBtn();
+        gm.writeLoginfo("User clicked on login Button");
 
     }
 

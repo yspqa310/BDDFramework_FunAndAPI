@@ -35,12 +35,12 @@ public class DriverFactory extends PropertyFilesLoader {
                 options.addArguments("--start-maximized");
                 options.addArguments("--disable-extensions");
                 options.addArguments("--disable-popup-blocking");
-//                options.addArguments("--incognito");
+                options.addArguments("--incognito");
                 options.addArguments("disable-infobars");
                 options.addArguments("--disable-gpu");
                 driver = new ChromeDriver(options);
                 gm.writeLoginfo("Chrome browser Launched successfully");
-            } else if (browser.equalsIgnoreCase("firfox")) {
+            } else if (browser.equalsIgnoreCase("firefox")) {
                 driver = new FirefoxDriver();
                 gm.writeLoginfo("Firefox browser Launched successfully");
             } else if (browser.equalsIgnoreCase("edge")) {
@@ -58,7 +58,6 @@ public class DriverFactory extends PropertyFilesLoader {
             System.err.println("Don't have compatibility");
             gm.writeLoginfo("browser not able to launch Launched");
         }
-
         return driver;
 
     }
@@ -68,7 +67,7 @@ public class DriverFactory extends PropertyFilesLoader {
      *
      * @return driver
      */
-    public static WebDriver getDriver() {
+    public static synchronized WebDriver getDriver() {
         return driver;
     }
 

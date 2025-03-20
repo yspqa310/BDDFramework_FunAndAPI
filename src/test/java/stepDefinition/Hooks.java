@@ -31,37 +31,37 @@ public class Hooks extends DriverFactory {
         getDriver().get(gm.getUrl());
     }
 
-    /**
-     * For TestNg use
-     * @throws IOException
-     */
-    @BeforeTest
-    public void launchURL() throws IOException {
-        GenericMethods gm = new GenericMethods();
-        initiatingBrowser();
-        getDriver().get(gm.getUrl());
-    }
-
-    /**
-     * For TestNg
-     * @param scenario
-     */
-    @AfterTest
-    public void tearDOWN(Scenario scenario) {
-        GenericMethods gm = new GenericMethods();
-        try {
-            if (scenario.isFailed()) {
-                final byte[] screenshot = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES);
-                scenario.attach(screenshot, "image/png", scenario.getName());
-                gm.writeLoginfo("Successfully Captured screenShot for Failed scenario" + scenario.getName());
-            }
-        } catch (Exception pasha) {
-
-            gm.writeLoginfo("Facing issue Capturing ScreenShot : " + pasha);
-            System.err.println("Facing issue while capturing ScreenShot : " + pasha);
-        }
-        getDriver().quit();
-    }
+//    /**
+//     * For TestNg use
+//     * @throws IOException
+//     */
+//    @BeforeTest
+//    public void launchURL() throws IOException {
+//        GenericMethods gm = new GenericMethods();
+//        initiatingBrowser();
+//        getDriver().get(gm.getUrl());
+//    }
+//
+//    /**
+//     * For TestNg
+//     * @param scenario
+//     */
+//    @AfterTest
+//    public void tearDOWN(Scenario scenario) {
+//        GenericMethods gm = new GenericMethods();
+//        try {
+//            if (scenario.isFailed()) {
+//                final byte[] screenshot = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES);
+//                scenario.attach(screenshot, "image/png", scenario.getName());
+//                gm.writeLoginfo("Successfully Captured screenShot for Failed scenario" + scenario.getName());
+//            }
+//        } catch (Exception pasha) {
+//
+//            gm.writeLoginfo("Facing issue Capturing ScreenShot : " + pasha);
+//            System.err.println("Facing issue while capturing ScreenShot : " + pasha);
+//        }
+//        getDriver().quit();
+//    }
 
     /**
      * This Method will close The All Opened Browser instances
@@ -75,7 +75,7 @@ public class Hooks extends DriverFactory {
         try {
             if (scenario.isFailed()) {
                 final byte[] screenshot = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES);
-                scenario.attach(screenshot, "failed"+scenario.getName()+"/png", scenario.getName());
+                scenario.attach(screenshot, "failed"+scenario.getName()+".png", scenario.getName());
                 gm.writeLoginfo("Successfully Captured screenShot for Failed scenario" + scenario.getName());
             }
         } catch (Exception chandu_pasha) {
