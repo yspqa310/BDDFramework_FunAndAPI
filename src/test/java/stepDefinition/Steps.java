@@ -19,6 +19,7 @@ public class Steps extends DriverFactory {
         gm.writeLoginfo("User entered email and password");
         lp.clickOnLoginBtn();
         gm.writeLoginfo("User clicked on login Button");
+//        lp.clickOnLoginBtn();
 
     }
 
@@ -56,7 +57,7 @@ public class Steps extends DriverFactory {
     @Then("click on logout")
     public void click_on_logout() {
         hp = new HomePage();
-        hp.logout();
+//        hp.logout();
     }
 
 
