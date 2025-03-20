@@ -13,7 +13,6 @@ import java.time.Duration;
 public class DriverFactory extends PropertyFilesLoader {
 
     public final static Logger LOGGER = LogManager.getLogger(DriverFactory.class);
-    //Logger log = LoggerHelper.getLogger(ServiceHooks.class);
     public static WebDriver driver;
 
     /**
