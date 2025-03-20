@@ -10,12 +10,12 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <cucumber.version>5.7.0</cucumber.version>
         <extentreports.cucumber5.adapter.version>1.5.1</extentreports.cucumber5.adapter.version>
         <extentreports.version>4.1.7</extentreports.version>
         <selenium.version>4.16.1</selenium.version>
         <log4j.version>1.2.17</log4j.version>
         <webdrivermanager.version>5.2.1</webdrivermanager.version>
+        <cucumber.version>5.7.0</cucumber.version>
         <testng.version>6.14.3</testng.version>
         <log4j.core.version>2.23.1</log4j.core.version>
         <apache.common.version>2.4</apache.common.version>
@@ -29,13 +29,18 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>${cucumber.version}</version>
         </dependency>
-
+        <!-- TestNG -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-testng</artifactId>
@@ -49,7 +54,6 @@
             <artifactId>extentreports-cucumber5-adapter</artifactId>
             <version>${extentreports.cucumber5.adapter.version}</version>
         </dependency>
-
         <!-- Extent Report -->
         <dependency>
             <groupId>com.aventstack</groupId>
@@ -71,13 +75,6 @@
             <version>${webdrivermanager.version}</version>
         </dependency>
 
-        <!-- TestNG -->
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>${testng.version}</version>
-            <scope>test</scope>
-        </dependency>
 
         <!-- Apache Common -->
         <dependency>
@@ -92,7 +89,6 @@
             <version>${log4j.version}</version>
         </dependency>
 
-
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
@@ -103,7 +99,6 @@
             <artifactId>log4j-core</artifactId>
             <version>2.14.1</version>
         </dependency>
-
 
 
         <!--apache.poi/poi -->
