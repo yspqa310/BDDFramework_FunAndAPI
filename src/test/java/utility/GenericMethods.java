@@ -1,5 +1,8 @@
 package utility;
 
+import net.sourceforge.tess4j.ITesseract;
+import net.sourceforge.tess4j.Tesseract;
+import net.sourceforge.tess4j.TesseractException;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
@@ -786,7 +789,13 @@ public class GenericMethods extends DriverFactory {
         }
     }
 
+    public static String captchaTextAutomate(WebElement CaptchaElemenet) throws TesseractException {
+        ITesseract tesseract =new Tesseract();
+        File file=CaptchaElemenet.getScreenshotAs(OutputType.FILE);
+        String captcha_text=tesseract.doOCR(file);
+        return captcha_text;
 
+    }
     // Date picker
 
     // Method to select a date from the calendar
